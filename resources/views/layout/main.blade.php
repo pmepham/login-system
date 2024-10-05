@@ -13,6 +13,7 @@
     <meta property="og:title" content="Saul Theme by KeenThemes">
     <meta property="og:url" content="https://keenthemes.com/products/saul-html-pro">
     <meta property="og:site_name" content="Saul HTML Pro by Keenthemes">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="canonical" href="http://preview.keenthemes.comindex.html">
     <link rel="shortcut icon" href="{{ asset('assets/media/logos/favicon.ico') }}">
     <!--begin::Fonts(mandatory for all pages)-->
