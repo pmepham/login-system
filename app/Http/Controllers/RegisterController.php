@@ -26,7 +26,7 @@ class RegisterController
             return response()->json(['success' => true, 'redirect' => route('dashboard')]);
         }
 
-        return response()->json(['success' => false, 'error' => 'Registration unsuccessful.<br>Please check your details or try logging in if you already have an account.'], 401);
+        return response()->json(['success' => false, 'error' => 'Registration unsuccessful. Please check your details or try logging in if you already have an account.'], 401);
     }
 
 }
