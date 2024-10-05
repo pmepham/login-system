@@ -9,8 +9,9 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'attempt'])->name('login.attempt');
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');;
+Route::post('/login', [LoginController::class, 'attempt'])->name('login.attempt')->middleware('guest');;
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class, 'index'])->name('register.attempt');
+Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
+Route::post('/register', [RegisterController::class, 'attempt'])->name('register.attempt')->middleware('guest');;

@@ -24,4 +24,9 @@ class LoginController
 
         return response()->json(['success' => false, 'error' => 'Your email or password is incorrect'], 401);
     }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }

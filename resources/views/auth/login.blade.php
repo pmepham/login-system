@@ -11,7 +11,7 @@
         <div class="text-center mb-10">
             <h1 class="text-gray-900 mb-3">Sign In to Saul HTML Pro</h1>
             <div class="text-gray-500 fw-semibold fs-4">New Here?
-                <a href="" class="link-primary fw-bold">Create an Account</a>
+                <a href="{{ route('register') }}" class="link-primary fw-bold">Create an Account</a>
             </div>
         </div>
         <div id="error" style="display:none;">
@@ -22,12 +22,12 @@
                 </div>
             </div>
         </div>
-        <div class="mb-10">
+        <div class="form-input mb-10">
             <label class="form-label fs-6 fw-bold text-gray-900">Email</label>
             <input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off">
             <div class="invalid-feedback"></div>
         </div>
-        <div class="mb-10">
+        <div class="form-input mb-10">
             <div class="d-flex flex-stack mb-2">
                 <label class="form-label fw-bold text-gray-900 fs-6 mb-0">Password</label>
                 <a href="authentication/sign-in/password-reset.html" class="link-primary fs-6 fw-bold">Forgot Password
@@ -85,6 +85,9 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  // Include CSRF token
                     },
                     error: function (response) {
+                        $('#error').hide();
+                        $('#register-attempt').find('.is-invalid').removeClass('is-invalid');
+
                         submit.prop('disabled', false);
                         submit.attr('data-kt-indicator', '');
                         var error = response.responseJSON.error;
@@ -98,7 +101,7 @@
                             $('#error').hide();
                             $('#login-attempt').find('.is-invalid').removeClass('is-invalid');
                             $.each(errors, function (key, value) {
-                                $('#login-attempt [name="' + key + '"]').addClass('is-invalid').parent().find('.invalid-feedback').text(value[0]);
+                                $('#login-attempt [name="' + key + '"]').addClass('is-invalid').closest('.form-input').find('.invalid-feedback').text(value[0]);
                             })
                         }
 
