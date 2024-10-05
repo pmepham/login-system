@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="w-lg-600px p-10 p-lg-15 mx-auto">
-    <form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" action="{{ route('registerAttempt') }}"
+    <form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" action="{{ route('register.attempt') }}"
         method="POST">
         @csrf
         <div class="mb-10 text-center">

@@ -2,23 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\LoginRequest;
 use Auth;
-use Illuminate\Http\Request;
+use App\Http\Requests\LoginRequest;
 
-class LoginController extends Controller
+class LoginController
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return view('auth.login');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function attempt(LoginRequest $request)
     {
         $credentials = $request->validated();
