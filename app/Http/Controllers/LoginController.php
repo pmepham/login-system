@@ -16,10 +16,13 @@ class LoginController
     {
         $credentials = $request->validated();
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::once($credentials)) {
             // Authentication passed, regenerate session to avoid fixation attacks
+            if(Auth::user()->_2fa){
+                return response()->json(['success' => true, 'redirect' => route('2fa') ]);
+            }
             $request->session()->regenerate();
-            return response()->json(['success' => true, 'redirect' => route('dashboard')]);
+            return response()->json(['success' => true, 'redirect' => route('dashboard') ]);
         }
 
         return response()->json(['success' => false, 'error' => 'Your email or password is incorrect'], 401);

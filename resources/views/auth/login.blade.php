@@ -107,12 +107,13 @@
 
                     },
                     success: function (response) {
+                        console.log(response);
                         $('#error').hide();
                         $('#login-attempt').find('.is-invalid').removeClass('is-invalid')
                         $('#login-attempt').find('.form-control').addClass('is-valid')
                         KTUtil.loadSwal('Logging In', 'Please wait...', 'success');
                         setTimeout(function () {
-                            window.location.assign('{{route('dashboard')}}');
+                            window.location.assign(response.redirect);
                         }, 1500);
                     },
                 })

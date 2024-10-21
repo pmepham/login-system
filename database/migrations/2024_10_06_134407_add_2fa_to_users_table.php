@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('firstname')->nullable();
-            $table->string('lastname')->nullable();
+            //
+            $table->boolean('tac')->nullable()->default(0);
+            $table->boolean('_2fa')->nullable()->default(0);
         });
     }
 
@@ -24,7 +25,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->dropColumn(['firstname', 'lastname']);
+            $table->dropColumn(['tac', '_2fa']);
         });
     }
 };
