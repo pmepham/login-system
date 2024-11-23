@@ -85,8 +85,9 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  // Include CSRF token
                     },
                     error: function (response) {
+                        console.log('error', response);
                         $('#error').hide();
-                        $('#register-attempt').find('.is-invalid').removeClass('is-invalid');
+                        $('#login-attempt').find('.is-invalid').removeClass('is-invalid');
 
                         submit.prop('disabled', false);
                         submit.attr('data-kt-indicator', '');
@@ -116,7 +117,7 @@
                             window.location.assign(response.redirect);
                         }, 1500);
                     },
-                })
+                });
             }
         })
     })
