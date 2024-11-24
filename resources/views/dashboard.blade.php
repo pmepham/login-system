@@ -18,20 +18,14 @@
                         <li class="breadcrumb-item">
                             <i class="ki-solid ki-right fs-4 text-gray-700 mx-n1"></i>
                         </li>
-                        <li class="breadcrumb-item text-gray-700 fw-bold lh-1">Here</li>
-                        <li class="breadcrumb-item">
+                        <li class="breadcrumb-item text-gray-700 fw-bold lh-1">Dashboard</li>
+                        <!--<li class="breadcrumb-item">
                             <i class="ki-solid ki-right fs-4 text-gray-700 mx-n1"></i>
                         </li>
-                        <li class="breadcrumb-item text-gray-700">Hello</li>
+                        <li class="breadcrumb-item text-gray-700">Hello</li>-->
                     </ul>
-                    <h1
-                        class="page-heading d-flex flex-column justify-content-center text-gray-900 fw-bolder fs-1 lh-0">
-                        Hello</h1>
+                    <h1 cclass="page-heading d-flex flex-column justify-content-center text-gray-900 fw-bolder fs-1 lh-0">Dashboard</h1>
                 </div>
-                <a href="#" class="btn btn-sm btn-success ms-3 px-4 py-3" data-bs-toggle="modal"
-                    data-bs-target="#create_board_modal">
-                    Add Board
-                </a>
             </div>
         </div>
     </div>
